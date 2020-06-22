@@ -24,7 +24,7 @@ class Character {
 
   show() {
     const [currentFrameX, currentFrameY] = this.framesCoordinates[this.currentFrame];
-    image(this.image, 0, height - 135, 110, 135, currentFrameX, currentFrameY, 220, 270);
+    image(this.image, 0, height - CHARACTER_HEIGHT / 2, CHARACTER_WIDTH / 2, CHARACTER_HEIGHT / 2, currentFrameX, currentFrameY, CHARACTER_WIDTH, CHARACTER_HEIGHT);
     this.walk();
   }
 
