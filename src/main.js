@@ -8,11 +8,12 @@ function preload() {
 }
 
 function setup() {
-  scenario = new Scenario(scenarioImage, 50);
   createCanvas(windowWidth, windowHeight);
+  scenario = new Scenario(scenarioImage, 3);
 }
 
 function draw() {
-  scenario.show()
+  scenario.show();
+  scenario.move();
   image(character, 0, height - 135, 110, 135, 0, 0, 220, 270);
 }
