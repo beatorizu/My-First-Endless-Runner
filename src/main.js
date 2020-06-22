@@ -15,6 +15,7 @@ function setup() {
   scenario = new Scenario(scenarioImage, 3);
   character = new Character(characterImage);
   soundTrack.loop();
+  frameRate(40);
 }
 
 function draw() {
