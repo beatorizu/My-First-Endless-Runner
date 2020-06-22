@@ -1,7 +1,13 @@
+let scenario;
+
+function preload() {
+  scenario = loadImage("assets/images/scenario/forest.png");
+}
+
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  background(220);
+  background(scenario);
 }
