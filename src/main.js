@@ -5,9 +5,9 @@ let soundTrack;
 let character;
 
 function preload() {
-  scenarioImage = loadImage("assets/images/scenario/forest.png");
-  characterImage = loadImage("assets/images/character/hipsta.png");
-  soundTrack = loadSound("assets/sounds/sound_track.mp3");
+  scenarioImage = loadImage(SCENARIO_IMAGE_PATH);
+  characterImage = loadImage(CHARACTER_IMAGE_PATH);
+  soundTrack = loadSound(SOUND_TRACK_PATH);
 }
 
 function setup() {
