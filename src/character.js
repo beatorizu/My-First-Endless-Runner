@@ -1,30 +1,19 @@
 class Character {
-  constructor(image) {
+  constructor(framesCoordinates, image, x, widthInScreen, heightInScreen, widthSprite, heightSprite) {
+    this.framesCoordinates = framesCoordinates;
     this.image = image;
-    this.framesCoordinates = [
-      [0, 0],
-      [220, 0],
-      [440, 0],
-      [660, 0],
-      [0, 270],
-      [220, 270],
-      [440, 270],
-      [660, 270],
-      [0, 540],
-      [220, 540],
-      [440, 540],
-      [660, 540],
-      [0, 810],
-      [220, 810],
-      [440, 810],
-      [660, 810],
-    ];
+    this.width = widthInScreen;
+    this.height = heightInScreen;
+    this.x = x;
+    this.y = height - this.height;
+    this.widthSprite = widthSprite;
+    this.heightSprite = heightSprite;
     this.currentFrame = 0;
   }
 
   show() {
     const [currentFrameX, currentFrameY] = this.framesCoordinates[this.currentFrame];
-    image(this.image, 0, height - CHARACTER_HEIGHT / 2, CHARACTER_WIDTH / 2, CHARACTER_HEIGHT / 2, currentFrameX, currentFrameY, CHARACTER_WIDTH, CHARACTER_HEIGHT);
+    image(this.image, this.x, this.y, this.width, this.height, currentFrameX, currentFrameY, this.widthSprite, this.heightSprite);
     this.walk();
   }
 
