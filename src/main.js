@@ -32,6 +32,7 @@ function draw() {
   scenario.show();
   scenario.move();
   hero.show();
+  hero.pullByTheGravity();
   enemyGotinha.show();
   enemyGotinha.move();
 }
