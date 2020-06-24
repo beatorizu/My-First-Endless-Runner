@@ -2,6 +2,7 @@ const SCENARIO_IMAGE_PATH = "assets/images/scenario/forest.png";
 const HERO_IMAGE_PATH = "assets/images/character/hipsta.png";
 const ENEMY_GOTINHA_IMAGE_PATH = "assets/images/enemies/gotinha.png";
 const SOUND_TRACK_PATH = "assets/sounds/sound_track.mp3";
+const GAME_OVER_SOUND_TRACK_PATH = "assets/sounds/game_over_sound_track.wav";
 
 const HERO_WIDTH_IN_SCREEN = 110;
 const HERO_HEIGHT_IN_SCREEN = 135;
@@ -61,3 +62,5 @@ const ENEMY_GOTINHA_FRAMES_COORDINATES = [
   [208, 626],
   [312, 626]
 ];
+
+const HITBOX_PRECISION = .7;

@@ -2,6 +2,7 @@ let scenarioImage;
 let heroImage;
 let scenario;
 let soundTrack;
+let gameOverSoundTrack;
 let hero;
 let enemyGotinha;
 let enemyGotinhaImage;
@@ -11,6 +12,7 @@ function preload() {
   heroImage = loadImage(HERO_IMAGE_PATH);
   soundTrack = loadSound(SOUND_TRACK_PATH);
   enemyGotinhaImage = loadImage(ENEMY_GOTINHA_IMAGE_PATH);
+  gameOverSoundTrack = loadSound(GAME_OVER_SOUND_TRACK_PATH);
 }
 
 function setup() {
@@ -28,6 +30,12 @@ function keyPressed() {
   }
 }
 
+function gameOver() {
+  noLoop();
+  soundTrack.stop();
+  gameOverSoundTrack.play();
+}
+
 function draw() {
   scenario.show();
   scenario.move();
@@ -37,6 +45,6 @@ function draw() {
   enemyGotinha.move();
 
   if (hero.isColliding(enemyGotinha)) {
-    noLoop()
+    gameOver();
   }
 }
