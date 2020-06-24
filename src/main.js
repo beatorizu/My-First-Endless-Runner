@@ -34,6 +34,11 @@ function keyPressed() {
   }
 }
 
+function touchStarted() {
+  hero.jump();
+  jumpSoundTrack.play();
+}
+
 function gameOver() {
   noLoop();
   soundTrack.stop();
