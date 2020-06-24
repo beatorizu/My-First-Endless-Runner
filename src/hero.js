@@ -23,8 +23,8 @@ class Hero extends Character {
 
   isColliding(enemy) {
     return collideRectRect(
-      this.x, this.y, this.width, this.height,
-      enemy.x, enemy.y, enemy.width, enemy.height
+      this.x, this.y, this.width * HITBOX_PRECISION, this.height * HITBOX_PRECISION,
+      enemy.x, enemy.y, enemy.width * HITBOX_PRECISION, enemy.height * HITBOX_PRECISION
     )
   }
 }
