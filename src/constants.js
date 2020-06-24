@@ -1,5 +1,6 @@
 const SCENARIO_IMAGE_PATH = "assets/images/scenario/forest.png";
 const HERO_IMAGE_PATH = "assets/images/character/hipsta.png";
+const ENEMY_GOTINHA_IMAGE_PATH = "assets/images/enemies/gotinha.png";
 const SOUND_TRACK_PATH = "assets/sounds/sound_track.mp3";
 
 const HERO_WIDTH_IN_SCREEN = 110;
@@ -23,4 +24,39 @@ const HERO_FRAMES_COORDINATES = [
   [220, 810],
   [440, 810],
   [660, 810],
+];
+
+const ENEMY_GOTINHA_WIDTH_IN_SCREEN = 52;
+const ENEMY_GOTINHA_HEIGHT_IN_SCREEN = 52;
+const ENEMY_GOTINHA_SPRITE_WIDTH = 104;
+const ENEMY_GOTINHA_SPRITE_HEIGHT = 104;
+const ENEMY_GOTINHA_FRAMES_COORDINATES = [
+  [0, 0],
+  [104, 0],
+  [208, 0],
+  [312, 0],
+  [0, 104],
+  [104, 104],
+  [208, 104],
+  [312, 104],
+  [0, 208],
+  [104, 208],
+  [208, 208],
+  [312, 208],
+  [0, 312],
+  [104, 312],
+  [208, 312],
+  [312, 312],
+  [0, 418],
+  [104, 418],
+  [208, 418],
+  [312, 418],
+  [0, 522],
+  [104, 522],
+  [208, 522],
+  [312, 522],
+  [0, 626],
+  [104, 626],
+  [208, 626],
+  [312, 626]
 ];
