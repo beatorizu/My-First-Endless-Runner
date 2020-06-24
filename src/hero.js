@@ -20,4 +20,11 @@ class Hero extends Character {
       this.y = this.groundLevel;
     }
   }
+
+  isColliding(enemy) {
+    return collideRectRect(
+      this.x, this.y, this.width, this.height,
+      enemy.x, enemy.y, enemy.width, enemy.height
+    )
+  }
 }

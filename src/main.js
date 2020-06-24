@@ -35,4 +35,8 @@ function draw() {
   hero.pullByTheGravity();
   enemyGotinha.show();
   enemyGotinha.move();
+
+  if (hero.isColliding(enemyGotinha)) {
+    noLoop()
+  }
 }
