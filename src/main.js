@@ -22,6 +22,12 @@ function setup() {
   frameRate(40);
 }
 
+function keyPressed() {
+  if (key === 'ArrowUp') {
+    hero.jump();
+  }
+}
+
 function draw() {
   scenario.show();
   scenario.move();
