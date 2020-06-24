@@ -6,6 +6,7 @@ let gameOverSoundTrack;
 let hero;
 let enemyGotinha;
 let enemyGotinhaImage;
+let jumpSoundTrack;
 
 function preload() {
   scenarioImage = loadImage(SCENARIO_IMAGE_PATH);
@@ -13,6 +14,8 @@ function preload() {
   soundTrack = loadSound(SOUND_TRACK_PATH);
   enemyGotinhaImage = loadImage(ENEMY_GOTINHA_IMAGE_PATH);
   gameOverSoundTrack = loadSound(GAME_OVER_SOUND_TRACK_PATH);
+  jumpSoundTrack = loadSound(JUMP_SOUND_TRACK_PATH);
+  jumpSoundTrack.setVolume(.4);
 }
 
 function setup() {
@@ -27,6 +30,7 @@ function setup() {
 function keyPressed() {
   if (key === 'ArrowUp') {
     hero.jump();
+    jumpSoundTrack.play();
   }
 }
 
