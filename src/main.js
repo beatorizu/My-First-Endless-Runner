@@ -17,7 +17,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   scenario = new Scenario(scenarioImage, 3);
   hero = new Hero(HERO_FRAMES_COORDINATES, heroImage, 0, HERO_WIDTH_IN_SCREEN, HERO_HEIGHT_IN_SCREEN, HERO_SPRITE_WIDTH, HERO_SPRITE_HEIGHT);
-  enemyGotinha = new Enemy(ENEMY_GOTINHA_FRAMES_COORDINATES, enemyGotinhaImage, width - ENEMY_GOTINHA_WIDTH_IN_SCREEN, ENEMY_GOTINHA_WIDTH_IN_SCREEN, ENEMY_GOTINHA_HEIGHT_IN_SCREEN, ENEMY_GOTINHA_SPRITE_WIDTH, ENEMY_GOTINHA_SPRITE_HEIGHT);
+  enemyGotinha = new Enemy(ENEMY_GOTINHA_FRAMES_COORDINATES, enemyGotinhaImage, width - ENEMY_GOTINHA_WIDTH_IN_SCREEN, ENEMY_GOTINHA_WIDTH_IN_SCREEN, ENEMY_GOTINHA_HEIGHT_IN_SCREEN, ENEMY_GOTINHA_SPRITE_WIDTH, ENEMY_GOTINHA_SPRITE_HEIGHT, ENEMY_GOTINHA_SPEED);
   soundTrack.loop();
   frameRate(40);
 }
@@ -27,4 +27,5 @@ function draw() {
   scenario.move();
   hero.show();
   enemyGotinha.show();
+  enemyGotinha.move();
 }
