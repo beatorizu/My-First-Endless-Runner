@@ -2,7 +2,7 @@ class Hero extends Character {
   constructor(image, x, yLevel, widthInScreen, heightInScreen, widthSprite, heightSprite, totalOfSprites) {
     super(image, x, yLevel, widthInScreen, heightInScreen, widthSprite, heightSprite, totalOfSprites)
 
-    this.groundLevel = height - this.height;
+    this.groundLevel = height - this.height - yLevel;
     this.y = this.groundLevel;
     this.gravityForce = 3;
     this.jumpSpeed = 0;
