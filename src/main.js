@@ -8,6 +8,8 @@ let enemyGotinha;
 let enemyGotinhaImage;
 let enemyGotinhaVoadora;
 let enemyGotinhaVoadoraImage;
+let enemyTroll;
+let enemyTrollImage;
 let jumpSoundTrack;
 const enemies = [];
 
@@ -17,6 +19,7 @@ function preload() {
   soundTrack = loadSound(SOUND_TRACK_PATH);
   enemyGotinhaImage = loadImage(ENEMY_GOTINHA_IMAGE_PATH);
   enemyGotinhaVoadoraImage = loadImage(ENEMY_GOTINHA_VOADORA_IMAGE_PATH);
+  enemyTrollImage = loadImage(ENEMY_TROLL_IMAGE_PATH);
   gameOverSoundTrack = loadSound(GAME_OVER_SOUND_TRACK_PATH);
   jumpSoundTrack = loadSound(JUMP_SOUND_TRACK_PATH);
   jumpSoundTrack.setVolume(.4);
@@ -28,7 +31,8 @@ function setup() {
   hero = new Hero(heroImage, 0, Y_GROUND_LEVEL, HERO_WIDTH_IN_SCREEN, HERO_HEIGHT_IN_SCREEN, HERO_SPRITE_WIDTH, HERO_SPRITE_HEIGHT);
   enemyGotinha = new Enemy(enemyGotinhaImage, width - ENEMY_GOTINHA_WIDTH_IN_SCREEN, Y_GROUND_LEVEL, ENEMY_GOTINHA_WIDTH_IN_SCREEN, ENEMY_GOTINHA_HEIGHT_IN_SCREEN, ENEMY_GOTINHA_SPRITE_WIDTH, ENEMY_GOTINHA_SPRITE_HEIGHT, ENEMY_GOTINHA_SPEED);
   enemyGotinhaVoadora = new Enemy(enemyGotinhaVoadoraImage, width - ENEMY_GOTINHA_VOADORA_WIDTH_IN_SCREEN, Y_AIR_LEVEL, ENEMY_GOTINHA_VOADORA_WIDTH_IN_SCREEN, ENEMY_GOTINHA_VOADORA_HEIGHT_IN_SCREEN, ENEMY_GOTINHA_VOADORA_SPRITE_WIDTH, ENEMY_GOTINHA_VOADORA_SPRITE_HEIGHT, ENEMY_GOTINHA_VOADORA_SPEED, ENEMY_GOTINHA_VOADORA_TOTAL_OF_SPRITES);
-  enemies.push(enemyGotinha, enemyGotinhaVoadora);
+  enemyTroll = new Enemy(enemyTrollImage, width - ENEMY_TROLL_WIDTH_IN_SCREEN, 0, ENEMY_TROLL_WIDTH_IN_SCREEN, ENEMY_TROLL_HEIGHT_IN_SCREEN, ENEMY_TROLL_SPRITE_WIDTH, ENEMY_TROLL_SPRITE_HEIGHT, ENEMY_TROLL_SPEED, ENEMY_TROLL_TOTAL_OF_SPRITES);
+  enemies.push(enemyGotinha, enemyGotinhaVoadora, enemyTroll);
   soundTrack.loop();
   frameRate(40);
 }
