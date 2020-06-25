@@ -1,6 +1,6 @@
 class Enemy extends Character {
-  constructor(image, x, widthInScreen, heightInScreen, widthSprite, heightSprite, speed, totalOfSprites) {
-    super(image, x, widthInScreen, heightInScreen, widthSprite, heightSprite, totalOfSprites)
+  constructor(image, x, yLevel, widthInScreen, heightInScreen, widthSprite, heightSprite, speed, totalOfSprites) {
+    super(image, x, yLevel, widthInScreen, heightInScreen, widthSprite, heightSprite, totalOfSprites)
     this.speed = speed;
   }
 

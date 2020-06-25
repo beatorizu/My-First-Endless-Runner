@@ -1,10 +1,11 @@
 class Character {
-  constructor(image, x, widthInScreen, heightInScreen, widthSprite, heightSprite, totalOfSprites = 0) {
+  constructor(image, x, yLevel, widthInScreen, heightInScreen, widthSprite, heightSprite, totalOfSprites = 0) {
     this.image = image;
     this.width = widthInScreen;
     this.height = heightInScreen;
     this.x = x;
-    this.y = height - this.height;
+    this.yLevel = yLevel;
+    this.y = height - this.height - this.yLevel;
     this.widthSprite = widthSprite;
     this.heightSprite = heightSprite;
     this.currentFrame = 0;
