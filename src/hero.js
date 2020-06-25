@@ -1,6 +1,6 @@
 class Hero extends Character {
-  constructor(framesCoordinates, image, x, widthInScreen, heightInScreen, widthSprite, heightSprite) {
-    super(framesCoordinates, image, x, widthInScreen, heightInScreen, widthSprite, heightSprite)
+  constructor(image, x, widthInScreen, heightInScreen, widthSprite, heightSprite, totalOfSprites) {
+    super(image, x, widthInScreen, heightInScreen, widthSprite, heightSprite, totalOfSprites)
 
     this.groundLevel = height - this.height;
     this.y = this.groundLevel;

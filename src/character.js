@@ -1,6 +1,5 @@
 class Character {
-  constructor(framesCoordinates, image, x, widthInScreen, heightInScreen, widthSprite, heightSprite) {
-    this.framesCoordinates = framesCoordinates;
+  constructor(image, x, widthInScreen, heightInScreen, widthSprite, heightSprite, totalOfSprites = 0) {
     this.image = image;
     this.width = widthInScreen;
     this.height = heightInScreen;
@@ -9,6 +8,8 @@ class Character {
     this.widthSprite = widthSprite;
     this.heightSprite = heightSprite;
     this.currentFrame = 0;
+    this.totalOfSprites = totalOfSprites;
+    this.calculateFramesCoordinates();
   }
 
   show() {
@@ -22,5 +23,12 @@ class Character {
     if (this.currentFrame >= this.framesCoordinates.length - 1) {
       this.currentFrame = 0;
     }
+  }
+
+  calculateFramesCoordinates() {
+    const columns = [...sequenceGenerator(0, this.image.width, this.widthSprite)]
+    const rows = [...sequenceGenerator(0, this.image.height, this.heightSprite)]
+    const framesCoordinates = rows.map(row => columns.map(column => [column, row])).flat()
+    this.framesCoordinates = this.totalOfSprites === 0 ? framesCoordinates : framesCoordinates.slice(0, this.totalOfSprites)
   }
 }
