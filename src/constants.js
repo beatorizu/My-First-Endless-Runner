@@ -6,6 +6,7 @@ const ENEMY_TROLL_IMAGE_PATH = "assets/images/enemies/troll.png";
 const SOUND_TRACK_PATH = "assets/sounds/sound_track.mp3";
 const GAME_OVER_SOUND_TRACK_PATH = "assets/sounds/game_over_sound_track.wav";
 const JUMP_SOUND_TRACK_PATH = "assets/sounds/jump_sound.mp3";
+const GAME_OVER_IMAGE_PATH = "assets/images/assets/game-over.png";
 
 const HERO_WIDTH_IN_SCREEN = 110;
 const HERO_HEIGHT_IN_SCREEN = 135;

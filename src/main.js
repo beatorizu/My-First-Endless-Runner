@@ -1,6 +1,7 @@
 let scenarioImage;
 let heroImage;
 let scenario;
+let gameOverImage;
 let soundTrack;
 let gameOverSoundTrack;
 let hero;
@@ -15,6 +16,7 @@ const enemies = [];
 
 function preload() {
   scenarioImage = loadImage(SCENARIO_IMAGE_PATH);
+  gameOverImage = loadImage(GAME_OVER_IMAGE_PATH);
   heroImage = loadImage(HERO_IMAGE_PATH);
   soundTrack = loadSound(SOUND_TRACK_PATH);
   enemyGotinhaImage = loadImage(ENEMY_GOTINHA_IMAGE_PATH);
@@ -52,6 +54,7 @@ function touchStarted() {
 function gameOver() {
   noLoop();
   soundTrack.stop();
+  image(gameOverImage, width / 2 - 200, height / 2);
   gameOverSoundTrack.play();
 }
 
