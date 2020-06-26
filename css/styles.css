@@ -6,3 +6,30 @@ body {
   align-items: center;
   background: black;
 }
+
+.loadingclass {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .loadingclass {
+    flex-direction: column;
+  }
+
+  .title, .story {
+    padding-left: 1rem;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .loadingclass {
+    flex-direction: row;
+  }
+}
