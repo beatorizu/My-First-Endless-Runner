@@ -6,21 +6,27 @@ class Scenario {
 		this.newWidth = parseInt(this.ratio * this.image.width);
 		this.x1 = 0;
 		this.x2 = this.newWidth;
+		this.x3 = 2 * this.newWidth;
 	}
 
 	show() {
 		image(this.image, this.x1, 0, this.newWidth, height);
 		image(this.image, this.x2, 0, this.newWidth, height);
+		image(this.image, this.x3, 0, this.newWidth, height);
 	}
 
 	move() {
 		this.x1 -= this.speed;
 		this.x2 -= this.speed;
+		this.x3 -= this.speed;
 		if (this.x1 < -this.newWidth) {
-			this.x1 = this.newWidth + this.x2;
+			this.x1 = 2 * this.newWidth + this.x2;
 		}
 		if (this.x2 < -this.newWidth) {
-      this.x2 = this.newWidth + this.x1;
+      this.x2 = 2 * this.newWidth + this.x3;
+		}
+		if (this.x3 < -this.newWidth) {
+      this.x3 = 2 * this.newWidth + this.x1;
 		}
 	}
 }
