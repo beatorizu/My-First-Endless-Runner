@@ -17,10 +17,10 @@ class Scenario {
 		this.x1 -= this.speed;
 		this.x2 -= this.speed;
 		if (this.x1 < -this.newWidth) {
-			this.x1 = this.newWidth;
+			this.x1 = this.newWidth + this.x2;
 		}
 		if (this.x2 < -this.newWidth) {
-      this.x2 = this.newWidth;
+      this.x2 = this.newWidth + this.x1;
 		}
 	}
 }
