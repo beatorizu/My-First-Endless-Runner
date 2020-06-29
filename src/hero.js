@@ -6,10 +6,15 @@ class Hero extends Character {
     this.y = this.groundLevel;
     this.gravityForce = 3;
     this.jumpSpeed = 0;
+    this.jumpLimit = 2;
+    this.jumps = 0;
   }
 
   jump() {
-    this.jumpSpeed = -30;
+    if (this.jumps < this.jumpLimit) {
+      this.jumpSpeed = -30;
+      this.jumps += 1;
+    }
   }
 
   pullByTheGravity() {
@@ -18,6 +23,7 @@ class Hero extends Character {
 
     if (this.y > this.groundLevel) {
       this.y = this.groundLevel;
+      this.jumps = 0;
     }
   }
 
