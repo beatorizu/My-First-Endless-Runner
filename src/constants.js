@@ -1,4 +1,3 @@
-const SCENARIO_IMAGE_PATH = "assets/images/scenario/forest.png";
 const HERO_IMAGE_PATH = "assets/images/character/hipsta.png";
 const ENEMY_GOTINHA_IMAGE_PATH = "assets/images/enemies/gotinha.png";
 const ENEMY_GOTINHA_VOADORA_IMAGE_PATH = "assets/images/enemies/gotinha-voadora.png";
@@ -36,3 +35,26 @@ const ENEMY_TROLL_TOTAL_OF_SPRITES = 25;
 const HITBOX_PRECISION = .7;
 const Y_GROUND_LEVEL = 30;
 const Y_AIR_LEVEL = 200;
+
+const SCENARIO_ELEMENTS = [
+  {
+    path: 'assets/images/scenario/parallax-mountain-bg.png',
+    speed: 1
+  },
+  {
+    path: 'assets/images/scenario/parallax-mountain-montain-far.png',
+    speed: 1
+  },
+  {
+    path: 'assets/images/scenario/parallax-mountain-mountains.png',
+    speed: 2
+  },
+  {
+    path: 'assets/images/scenario/parallax-mountain-trees.png',
+    speed: 3
+  },
+  {
+    path: 'assets/images/scenario/parallax-mountain-foreground-trees.png',
+    speed: 4
+  },
+]

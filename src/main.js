@@ -1,6 +1,4 @@
-let scenarioImage;
 let heroImage;
-let scenario;
 let gameOverImage;
 let soundTrack;
 let gameOverSoundTrack;
@@ -15,7 +13,6 @@ let jumpSoundTrack;
 const enemies = [];
 
 function preload() {
-  scenarioImage = loadImage(SCENARIO_IMAGE_PATH);
   gameOverImage = loadImage(GAME_OVER_IMAGE_PATH);
   heroImage = loadImage(HERO_IMAGE_PATH);
   soundTrack = loadSound(SOUND_TRACK_PATH);
@@ -25,11 +22,18 @@ function preload() {
   gameOverSoundTrack = loadSound(GAME_OVER_SOUND_TRACK_PATH);
   jumpSoundTrack = loadSound(JUMP_SOUND_TRACK_PATH);
   jumpSoundTrack.setVolume(.4);
+  SCENARIO_ELEMENTS.forEach(element => {
+    const { path } = element;
+    element.image = loadImage(path);
+  });
 }
 
 function setup() {
   createCanvas(windowWidth, 600);
-  scenario = new Scenario(scenarioImage, 3);
+  SCENARIO_ELEMENTS.forEach(element => {
+    const { image, speed } = element;
+    element.scenario = new Scenario(image, speed);
+  });
   hero = new Hero(heroImage, 0, Y_GROUND_LEVEL, HERO_WIDTH_IN_SCREEN, HERO_HEIGHT_IN_SCREEN, HERO_SPRITE_WIDTH, HERO_SPRITE_HEIGHT);
   enemyGotinha = new Enemy(enemyGotinhaImage, width - ENEMY_GOTINHA_WIDTH_IN_SCREEN, Y_GROUND_LEVEL, ENEMY_GOTINHA_WIDTH_IN_SCREEN, ENEMY_GOTINHA_HEIGHT_IN_SCREEN, ENEMY_GOTINHA_SPRITE_WIDTH, ENEMY_GOTINHA_SPRITE_HEIGHT, ENEMY_GOTINHA_SPEED);
   enemyGotinhaVoadora = new Enemy(enemyGotinhaVoadoraImage, width - ENEMY_GOTINHA_VOADORA_WIDTH_IN_SCREEN, Y_AIR_LEVEL, ENEMY_GOTINHA_VOADORA_WIDTH_IN_SCREEN, ENEMY_GOTINHA_VOADORA_HEIGHT_IN_SCREEN, ENEMY_GOTINHA_VOADORA_SPRITE_WIDTH, ENEMY_GOTINHA_VOADORA_SPRITE_HEIGHT, ENEMY_GOTINHA_VOADORA_SPEED, ENEMY_GOTINHA_VOADORA_TOTAL_OF_SPRITES);
@@ -59,8 +63,11 @@ function gameOver() {
 }
 
 function draw() {
-  scenario.show();
-  scenario.move();
+  SCENARIO_ELEMENTS.forEach(element => {
+    const { scenario } = element;
+    scenario.show();
+    scenario.move();
+  });
   hero.show();
   hero.pullByTheGravity();
   enemies.forEach(enemy => {
