@@ -11,6 +11,7 @@ let enemyTroll;
 let enemyTrollImage;
 let jumpSoundTrack;
 const enemies = [];
+let score;
 
 function preload() {
   gameOverImage = loadImage(GAME_OVER_IMAGE_PATH);
@@ -41,6 +42,7 @@ function setup() {
   enemies.push(enemyGotinha, enemyGotinhaVoadora, enemyTroll);
   soundTrack.loop();
   frameRate(40);
+  score = new Score();
 }
 
 function keyPressed() {
@@ -68,6 +70,8 @@ function draw() {
     scenario.show();
     scenario.move();
   });
+  score.show();
+  score.addPoint();
   hero.show();
   hero.pullByTheGravity();
   enemies.forEach(enemy => {
