@@ -13,3 +13,8 @@ let jumpSoundTrack;
 const enemies = [];
 let score;
 let game;
+let home;
+let homeImage;
+let erinFont;
+let buttomManager;
+let currentScene;

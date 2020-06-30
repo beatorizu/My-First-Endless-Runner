@@ -1,4 +1,6 @@
 function preload() {
+  homeImage = loadImage(HOME_SCREEN_IMAGE_PATH);
+  erinFont = loadFont(ERIN_FONT_PATH);
   gameOverImage = loadImage(GAME_OVER_IMAGE_PATH);
   heroImage = loadImage(HERO_IMAGE_PATH);
   soundTrack = loadSound(SOUND_TRACK_PATH);
@@ -17,8 +19,14 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, 600);
   frameRate(40);
+  currentScene = 'home'
+  buttomManager = new ButtomManager('Iniciar', width / 2, height / 2);
+  home = new Home();
   game = new Game();
   game.setup();
+  scenes = {
+    home, game
+  }
 }
 
 function keyPressed() {
@@ -30,5 +38,5 @@ function touchStarted() {
 }
 
 function draw() {
-  game.draw();
+  scenes[currentScene].draw();
 }
