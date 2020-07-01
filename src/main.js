@@ -14,6 +14,7 @@ function preload() {
     const { path } = element;
     element.image = loadImage(path);
   });
+  heartImage = loadImage(HEART_IMAGE_PATH);
 }
 
 function setup() {

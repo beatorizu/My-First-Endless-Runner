@@ -7,6 +7,7 @@ const GAME_OVER_SOUND_TRACK_PATH = "assets/sounds/game_over_sound_track.wav";
 const JUMP_SOUND_TRACK_PATH = "assets/sounds/jump_sound.mp3";
 const GAME_OVER_IMAGE_PATH = "assets/images/assets/game-over.png";
 const HOME_SCREEN_IMAGE_PATH = "assets/images/assets/home.png";
+const HEART_IMAGE_PATH = "assets/images/assets/heart.png";
 const ERIN_FONT_PATH = "assets/fonts/erin.otf";
 
 const HERO_WIDTH_IN_SCREEN = 110;

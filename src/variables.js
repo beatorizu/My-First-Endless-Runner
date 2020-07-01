@@ -18,3 +18,4 @@ let homeImage;
 let erinFont;
 let buttomManager;
 let currentScene;
+let heartImage;
