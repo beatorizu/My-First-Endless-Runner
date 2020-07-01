@@ -15,6 +15,7 @@ class Game {
     enemies.push(enemyGotinha, enemyGotinhaVoadora, enemyTroll);
     soundTrack.loop();
     score = new Score();
+    life = new Life(3, 3);
   }
 
   gameOver() {
@@ -42,6 +43,7 @@ class Game {
       scenario.show();
       scenario.move();
     });
+    life.show();
     score.show();
     score.addPoint();
     hero.show();
@@ -50,7 +52,11 @@ class Game {
       enemy.show();
       enemy.move(array[(index + 1) % array.length]);
       if (hero.isColliding(enemy)) {
-        this.gameOver();
+        life.loseLife();
+        hero.becomeInvincible();
+        if (life.lifes === 0) {
+          this.gameOver();
+        }
       }
     });
   }

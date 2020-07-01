@@ -8,6 +8,7 @@ class Hero extends Character {
     this.jumpSpeed = 0;
     this.jumpLimit = 2;
     this.jumps = 0;
+    this.isInvincible = false;
   }
 
   jump() {
@@ -28,9 +29,20 @@ class Hero extends Character {
   }
 
   isColliding(enemy) {
+    if (this.isInvincible) {
+      return false;
+    }
     return collideRectRect(
       this.x, this.y, this.width * HITBOX_PRECISION, this.height * HITBOX_PRECISION,
       enemy.x, enemy.y, enemy.width * HITBOX_PRECISION, enemy.height * HITBOX_PRECISION
     )
   }
+
+  becomeInvincible() {
+    this.isInvincible = true;
+    setTimeout(() => {
+      this.isInvincible = false;
+    }, 1000);
+  }
+
 }
