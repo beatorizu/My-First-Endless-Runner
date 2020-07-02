@@ -36,28 +36,12 @@ const ENEMY_TROLL_SPRITE_HEIGHT = 400;
 const ENEMY_TROLL_TOTAL_OF_SPRITES = 25;
 
 const HITBOX_PRECISION = .7;
-const Y_GROUND_LEVEL = 30;
-const Y_AIR_LEVEL = 200;
+const Y_GROUND_LEVEL = 78;
+const Y_AIR_LEVEL = 248;
 
 const SCENARIO_ELEMENTS = [
   {
-    path: 'assets/images/scenario/parallax-mountain-bg.png',
-    speed: 1
-  },
-  {
-    path: 'assets/images/scenario/parallax-mountain-montain-far.png',
-    speed: 1
-  },
-  {
-    path: 'assets/images/scenario/parallax-mountain-mountains.png',
-    speed: 2
-  },
-  {
-    path: 'assets/images/scenario/parallax-mountain-trees.png',
-    speed: 3
-  },
-  {
-    path: 'assets/images/scenario/parallax-mountain-foreground-trees.png',
+    path: 'assets/images/scenario/ground.png',
     speed: 4
   },
 ]

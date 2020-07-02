@@ -39,5 +39,6 @@ function touchStarted() {
 }
 
 function draw() {
+  background('#f19da5');
   scenes[currentScene].draw();
 }
