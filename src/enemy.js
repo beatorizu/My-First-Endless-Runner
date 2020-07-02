@@ -6,10 +6,9 @@ class Enemy extends Character {
 
   move() {
     this.x -= this.speed;
-    if (this.x <= -this.width) {
-      setTimeout(() => {
-        this.x = width
-      }, 1000);
-    }
+  }
+
+  appear() {
+    this.x = width;
   }
 }

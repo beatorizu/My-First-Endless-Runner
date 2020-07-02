@@ -1,6 +1,20 @@
 class Game {
   constructor() {
-    this.currentEnemyIndex = 0;
+    this.currentIndex = 0;
+    this.map = [
+      {
+        enemy: 0,
+        speed: 10
+      },
+      {
+        enemy: 1,
+        speed: 15
+      },
+      {
+        enemy: 2,
+        speed: 40
+      }
+    ]
   }
 
   setup() {
@@ -38,7 +52,8 @@ class Game {
   }
 
   draw() {
-    const currentEnemy = enemies[this.currentEnemyIndex];
+    const currentRow = this.map[this.currentIndex]
+    const currentEnemy = enemies[currentRow.enemy];
     const enemyIsInvisible = currentEnemy.x < -currentEnemy.width;
     SCENARIO_ELEMENTS.forEach(element => {
       const { scenario } = element;
@@ -50,12 +65,14 @@ class Game {
     score.addPoint();
     hero.show();
     hero.pullByTheGravity();
+    currentEnemy.speed = currentRow.speed;
     currentEnemy.show();
     currentEnemy.move();
     if (enemyIsInvisible) {
-      this.currentEnemyIndex++;
-      if(this.currentEnemyIndex > enemies.length - 1) {
-        this.currentEnemyIndex = 0;
+      this.currentIndex++;
+      currentEnemy.appear();
+      if(this.currentIndex > enemies.length - 1) {
+        this.currentIndex = 0;
       }
     }
     if (hero.isColliding(currentEnemy)) {
