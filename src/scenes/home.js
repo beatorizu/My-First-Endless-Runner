@@ -3,6 +3,12 @@ class Home {
 
   }
 
+  keyPressed(key) {
+    if (key === ' ') {
+      buttomManager._changeScene();
+    }
+  }
+
   draw() {
     this._showBackground();
     this._showText();

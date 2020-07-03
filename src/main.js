@@ -32,11 +32,13 @@ function setup() {
 }
 
 function keyPressed() {
-  game.keyPressed(key);
+  scenes[currentScene].keyPressed(key);
 }
 
 function touchStarted() {
-  game.touchStarted();
+  if (currentScene !== 'home') {
+    scenes[currentScene].touchStarted();
+  }
 }
 
 function draw() {
