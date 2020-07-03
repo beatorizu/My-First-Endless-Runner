@@ -20,3 +20,4 @@ let buttomManager;
 let currentScene;
 let heartImage;
 let life;
+let cartucho;

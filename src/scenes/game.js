@@ -1,20 +1,8 @@
 class Game {
-  constructor() {
+  constructor(cartucho) {
     this.currentIndex = 0;
-    this.map = [
-      {
-        enemy: 0,
-        speed: 10
-      },
-      {
-        enemy: 1,
-        speed: 15
-      },
-      {
-        enemy: 2,
-        speed: 40
-      }
-    ]
+    ({ map: this.map, settings: this.settings } = cartucho);
+    this.map = cartucho.map;
   }
 
   setup() {
@@ -29,7 +17,8 @@ class Game {
     enemies.push(enemyGotinha, enemyGotinhaVoadora, enemyTroll);
     soundTrack.loop();
     score = new Score();
-    life = new Life(3, 3);
+    const { maxLifes, initialLifes } = this.settings;
+    life = new Life(maxLifes, initialLifes);
   }
 
   gameOver() {

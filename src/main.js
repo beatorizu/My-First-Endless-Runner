@@ -1,4 +1,5 @@
 function preload() {
+  cartucho = loadJSON('cartucho/cartucho.json');
   homeImage = loadImage(HOME_SCREEN_IMAGE_PATH);
   erinFont = loadFont(ERIN_FONT_PATH);
   gameOverImage = loadImage(GAME_OVER_IMAGE_PATH);
@@ -23,7 +24,7 @@ function setup() {
   currentScene = 'home'
   buttomManager = new ButtomManager('Iniciar', width / 2, height / 2);
   home = new Home();
-  game = new Game();
+  game = new Game(cartucho);
   game.setup();
   scenes = {
     home, game
