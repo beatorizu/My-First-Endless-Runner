@@ -41,6 +41,18 @@ const Y_AIR_LEVEL = 248;
 
 const SCENARIO_ELEMENTS = [
   {
+    path: 'assets/images/scenario/sky.png',
+    speed: 1
+  },
+  {
+    path: 'assets/images/scenario/clouds.png',
+    speed: 2
+  },
+  {
+    path: 'assets/images/scenario/trees.png',
+    speed: 3
+  },
+  {
     path: 'assets/images/scenario/ground.png',
     speed: 4
   },
