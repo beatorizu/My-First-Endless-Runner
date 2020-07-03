@@ -4,10 +4,10 @@ class Score {
   }
 
   show() {
-    textAlign(RIGHT);
-    fill('#fff');
-    textSize(30);
-    text(parseInt(this.points), width - 30, 50);
+    virtualCanvas.textAlign(RIGHT);
+    virtualCanvas.fill('#fff');
+    virtualCanvas.textSize(30);
+    virtualCanvas.text(parseInt(this.points), width - 30, 50);
   }
 
   addPoint(points=0.2) {

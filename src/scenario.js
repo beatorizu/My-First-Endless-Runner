@@ -10,9 +10,9 @@ class Scenario {
 	}
 
 	show() {
-		image(this.image, this.x1, 0);
-		image(this.image, this.x2, 0);
-		image(this.image, this.x3, 0);
+		virtualCanvas.image(this.image, this.x1, 0);
+		virtualCanvas.image(this.image, this.x2, 0);
+		virtualCanvas.image(this.image, this.x3, 0);
 	}
 
 	move() {

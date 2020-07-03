@@ -16,16 +16,16 @@ class Home {
   }
 
   _showBackground() {
-    image(homeImage, 0, 0, width, height);
+    virtualCanvas.image(homeImage, 0, 0, width, height);
   }
 
   _showText() {
-    textFont(erinFont);
-    textAlign(CENTER)
-    textSize(50);
-    text('As aventuras de', width / 2, height / 3);
-    textSize(150);
-    text('Erin', width / 2, height / 5 * 3)
+    virtualCanvas.textFont(erinFont);
+    virtualCanvas.textAlign(CENTER)
+    virtualCanvas.textSize(50);
+    virtualCanvas.text('As aventuras de', width / 2, height / 3);
+    virtualCanvas.textSize(150);
+    virtualCanvas.text('Erin', width / 2, height / 5 * 3)
   }
 
   _showButtom() {

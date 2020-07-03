@@ -24,7 +24,7 @@ class Game {
   gameOver() {
     noLoop();
     soundTrack.stop();
-    image(gameOverImage, width / 2 - 200, height / 2);
+    virtualCanvas.image(gameOverImage, width / 2 - 200, height / 2);
     gameOverSoundTrack.play();
   }
 

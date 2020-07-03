@@ -20,7 +20,9 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, 600);
+  virtualCanvas = createGraphics(windowWidth, 600);
   frameRate(40);
+  virtualCanvas.frameRate(40);
   currentScene = 'home'
   buttomManager = new ButtomManager('Iniciar', width / 2, height / 2);
   home = new Home();
@@ -42,6 +44,6 @@ function touchStarted() {
 }
 
 function draw() {
-  background('#f19da5');
   scenes[currentScene].draw();
+  image(virtualCanvas, 0, 0, windowWidth, 600);
 }

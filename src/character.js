@@ -15,7 +15,7 @@ class Character {
 
   show() {
     const [currentFrameX, currentFrameY] = this.framesCoordinates[this.currentFrame];
-    image(this.image, this.x, this.y, this.width, this.height, currentFrameX, currentFrameY, this.widthSprite, this.heightSprite);
+    virtualCanvas.image(this.image, this.x, this.y, this.width, this.height, currentFrameX, currentFrameY, this.widthSprite, this.heightSprite);
     this.animate();
   }
 

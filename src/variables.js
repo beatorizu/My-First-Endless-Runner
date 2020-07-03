@@ -21,3 +21,4 @@ let currentScene;
 let heartImage;
 let life;
 let cartucho;
+let virtualCanvas;

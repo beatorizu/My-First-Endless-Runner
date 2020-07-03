@@ -13,7 +13,7 @@ class Life {
     for (let i = 0; i < this.lifes; i++) {
       const margin = i * 10;
       const position = this.initialX * (1 + i);
-      image(heartImage, position + margin, this.y, this.width, this.height);
+      virtualCanvas.image(heartImage, position + margin, this.y, this.width, this.height);
     }
   }
 
