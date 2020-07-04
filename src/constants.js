@@ -38,22 +38,3 @@ const ENEMY_TROLL_TOTAL_OF_SPRITES = 25;
 const HITBOX_PRECISION = .7;
 const Y_GROUND_LEVEL = 78;
 const Y_AIR_LEVEL = 248;
-
-const SCENARIO_ELEMENTS = [
-  {
-    path: 'assets/images/scenario/sky.png',
-    speed: 1
-  },
-  {
-    path: 'assets/images/scenario/clouds.png',
-    speed: 2
-  },
-  {
-    path: 'assets/images/scenario/trees.png',
-    speed: 3
-  },
-  {
-    path: 'assets/images/scenario/ground.png',
-    speed: 4
-  },
-]

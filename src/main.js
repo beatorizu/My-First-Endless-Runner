@@ -1,5 +1,10 @@
 function preload() {
-  cartucho = loadJSON('cartucho/cartucho.json');
+  cartucho = loadJSON('cartucho/cartucho.json', cartucho => {
+    cartucho.map.scenario.forEach(element => {
+      const { path } = element;
+      element.image = loadImage(path);
+    });
+  });
   homeImage = loadImage(HOME_SCREEN_IMAGE_PATH);
   erinFont = loadFont(ERIN_FONT_PATH);
   gameOverImage = loadImage(GAME_OVER_IMAGE_PATH);
@@ -11,10 +16,6 @@ function preload() {
   gameOverSoundTrack = loadSound(GAME_OVER_SOUND_TRACK_PATH);
   jumpSoundTrack = loadSound(JUMP_SOUND_TRACK_PATH);
   jumpSoundTrack.setVolume(.4);
-  SCENARIO_ELEMENTS.forEach(element => {
-    const { path } = element;
-    element.image = loadImage(path);
-  });
   heartImage = loadImage(HEART_IMAGE_PATH);
 }
 

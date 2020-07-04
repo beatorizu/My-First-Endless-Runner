@@ -2,11 +2,11 @@ class Game {
   constructor(cartucho) {
     this.currentIndex = 0;
     ({ map: this.map, settings: this.settings } = cartucho);
-    this.map = cartucho.map;
+    ({ scenario: this.scenario, enemies: this.enemies } = this.map);
   }
 
   setup() {
-    SCENARIO_ELEMENTS.forEach(element => {
+    this.scenario.forEach(element => {
       const { image, speed } = element;
       element.scenario = new Scenario(image, speed);
     });
@@ -41,10 +41,10 @@ class Game {
   }
 
   draw() {
-    const currentRow = this.map[this.currentIndex]
+    const currentRow = this.enemies[this.currentIndex]
     const currentEnemy = enemies[currentRow.enemy];
     const enemyIsInvisible = currentEnemy.x < -currentEnemy.width;
-    SCENARIO_ELEMENTS.forEach(element => {
+    this.scenario.forEach(element => {
       const { scenario } = element;
       scenario.show();
       scenario.move();

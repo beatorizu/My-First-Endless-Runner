@@ -1,1 +1,1 @@
-{"settings": {"maxLifes": 5, "initialLifes": 5}, "map": [{"enemy": 0, "speed": 10}, {"enemy": 1, "speed": 15}, {"enemy": 2, "speed": 40}]}
+{"settings": {"maxLifes": 5, "initialLifes": 5}, "map": {"scenario": [{"path": "assets/images/scenario/sky.png", "speed": 1}, {"path": "assets/images/scenario/clouds.png", "speed": 2}, {"path": "assets/images/scenario/trees.png", "speed": 3}, {"path": "assets/images/scenario/ground.png", "speed": 4}], "enemies": [{"enemy": 0, "speed": 10}, {"enemy": 1, "speed": 15}, {"enemy": 2, "speed": 40}]}}
