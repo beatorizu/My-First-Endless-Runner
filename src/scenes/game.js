@@ -10,11 +10,17 @@ class Game {
       const { image, speed } = element;
       element.scenario = new Scenario(image, speed);
     });
+    this.enemies.forEach(element => {
+      const { image, sprite, speed, yLevel } = element;
+      enemies.push(new Enemy(
+        image, width, yLevel,
+        sprite.widthInScreen,
+        sprite.heightInScreen,
+        sprite.spriteWidth,
+        sprite.spriteHeight, speed, sprite.totalOfSprites
+      ));
+    });
     hero = new Hero(heroImage, 0, Y_GROUND_LEVEL, HERO_WIDTH_IN_SCREEN, HERO_HEIGHT_IN_SCREEN, HERO_SPRITE_WIDTH, HERO_SPRITE_HEIGHT);
-    enemyGotinha = new Enemy(enemyGotinhaImage, width, Y_GROUND_LEVEL, ENEMY_GOTINHA_WIDTH_IN_SCREEN, ENEMY_GOTINHA_HEIGHT_IN_SCREEN, ENEMY_GOTINHA_SPRITE_WIDTH, ENEMY_GOTINHA_SPRITE_HEIGHT, ENEMY_GOTINHA_SPEED, 0);
-    enemyGotinhaVoadora = new Enemy(enemyGotinhaVoadoraImage, width, Y_AIR_LEVEL, ENEMY_GOTINHA_VOADORA_WIDTH_IN_SCREEN, ENEMY_GOTINHA_VOADORA_HEIGHT_IN_SCREEN, ENEMY_GOTINHA_VOADORA_SPRITE_WIDTH, ENEMY_GOTINHA_VOADORA_SPRITE_HEIGHT, ENEMY_GOTINHA_VOADORA_SPEED, ENEMY_GOTINHA_VOADORA_TOTAL_OF_SPRITES);
-    enemyTroll = new Enemy(enemyTrollImage, width, 50, ENEMY_TROLL_WIDTH_IN_SCREEN, ENEMY_TROLL_HEIGHT_IN_SCREEN, ENEMY_TROLL_SPRITE_WIDTH, ENEMY_TROLL_SPRITE_HEIGHT, ENEMY_TROLL_SPEED, ENEMY_TROLL_TOTAL_OF_SPRITES);
-    enemies.push(enemyGotinha, enemyGotinhaVoadora, enemyTroll);
     soundTrack.loop();
     score = new Score();
     const { maxLifes, initialLifes } = this.settings;
